@@ -5,8 +5,6 @@
      color:white;
      text-shadow: black 1px 1px 0, black -1px -1px 0, 
                  black -1px 1px 0, black 1px -1px 0;
-    
-
 }
 .container {
 	width:900px;
@@ -107,13 +105,10 @@ border:1px solid black;
 	margin:0 230px;
 }
 .podowva{
-	border:1px solid black;
-	height:150px;
-	width:100%;
-}
-/*body{
-	background: url(home/pupil/Sites/html/Frey/images/night-sky-large.jpg);
+	border:1px solid white;
+	height:200px;
+	width:1000px;
+	background: url(/ZadanieProjct/images/footer.png);
+	background-size: 1000px 200px;
 }
 
-
-*/
