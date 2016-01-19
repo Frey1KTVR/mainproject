@@ -1,6 +1,6 @@
  body {
-     background:url(/home/pupil/Sites/html/Frey/ZadanieProjct/images/night-sky-large.jpg) ; 
-     background-size: 100%;
+     background:url(/ZadanieProjct/images/night-sky-large.jpg) ; 
+     background-size: 1200px ;
      background-attachment: fixed;
      color:white;
      text-shadow: black 1px 1px 0, black -1px -1px 0, 
@@ -59,7 +59,7 @@ table{
 	width: 100%;
 }
 .lenta{
-	background:url(/home/pupil/Sites/html/Frey/ZadanieProjct/images/pergament2.png);
+	background:url(/ZadanieProjct/images/pergament2.png);
 	background-attachment: fixed;
 	background-position: center;
 	margin:0 auto;
