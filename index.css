@@ -22,10 +22,23 @@ html{
   border-right:1px solid #999;
   padding-left: 10px; /* Отступ от линии слева до текста  */
   padding-bottom: 10px; /* Отступ от линии снизу до текста  */
+ position: absolute ;
+margin-bottom: 200px;
+
 }
 #logo{
-	align:center;
+	 width: 1250px;
+   ;
+}
+ 
+th{
+  background:#f60;
+}
+td{
+  background: #CCC;
+  border:5px solid ;
+  border-spacing: 5px 5px;
 }
 table{
-  color: #000;
+  border:#000;
 }
