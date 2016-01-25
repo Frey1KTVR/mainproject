@@ -1,0 +1,22 @@
+.invalid{
+    border:2px solid #ff5050;
+}
+.error-off{
+	display:none;
+}
+.error-on{
+	color: red;
+	display: block;
+	font-size: 10pt;
+}
+.container{
+	margin:50px auto;
+	border:1px black;
+	width:550px;
+	height: 500px:;
+}
+.maxl{
+	color: red;
+	display: block;
+	font-size: 10pt;
+}
