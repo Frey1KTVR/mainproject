@@ -1,6 +1,6 @@
  body {
      background: url(../images/1484_space.jpg); 
-     background-size: 100% ;
+     background-size: 1920px 1080px ;
      background-attachment: fixed;
      color:white;
      text-shadow: black 1px 1px 0, black -1px -1px 0, 
@@ -113,7 +113,15 @@ border:1px solid black;
 	background: url(../images/footer.png);
 	background-size: 100%;
 }
-.karta{
+/*.karta{
 	margin:0 auto;
+}*/
+.privet{
+	margin:7px 100px;
 }
 
+#maslom{
+	height:386px;
+	width:527px;
+	margin:0 200px;
+}
