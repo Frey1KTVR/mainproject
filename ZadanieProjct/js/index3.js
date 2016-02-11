@@ -19,8 +19,57 @@
 // str+="</div>";
 // var addingscript=document.getElementById("massive");
 // 	addingscript.innerHTML+= str;
+function dostoevsky(onclick){
+	var i=5;
+	return i;
+}
+var e=document.getElementById("esenin");
+e.onclick=function esenin(){
+	var i=0;
+	return i;
+}
+
+var b=document.getElementById("bulgakov");
+b.onclick=function bulgakov(){
+	var i=1;
+	return i;
+}
+
+var s=document.getElementById("solzen");
+s.onclick=function solzen(){
+	var i=2;
+	return i;
+}
+
+var t=document.getElementById("tolstoi");
+t.onclick=function tolstoi(){
+	var i=3;
+
+	return i;
+}
+
+var m=document.getElementById("majakovsky");
+m.onclick=function majakovsky(){
+	var i=4;
+	return i;
+}
+
+var d=document.getElementById("dostoevsky");
+d.onclick=function dostoevsky(){
+	var i=5;
+	return i;
+}
+
 
 function getContent(data){
+	d.onclick;
+	function esenin(onclick);
+	function bulgakov(onclick);
+	function solzen(onclick);
+	
+	function majakovsky(onclick);
+	function tolstoi(onclick);
+	alert(i);
 	var str='';
 		for(var i=0; i<data.popularwriters.length; i++){
 			str+='<div class="tema1">';
@@ -38,16 +87,12 @@ var xhr=new XMLHttpRequest();
 xhr.onload=function(){
 	console.log(xhr.responseText);
 	var data=JSON.parse(xhr.responseText);
-	document.getElementById("massive").innerHTML=getContent(data);
+	document.getElementById("massiv").innerHTML=getContent(data);
 	
 }	
 	
 xhr.open("GET","json/data.json",true);
 xhr.send();
-
-
-
-
 
 
 
