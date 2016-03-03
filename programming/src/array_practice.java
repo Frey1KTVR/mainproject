@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author pupil
  */
-public class array_practice {
+/*public class array_practice {
     public static void main(String[] args) {
         int[] mas=new int[20];
         Arrays.fill(mas,5);
@@ -20,3 +20,4 @@ public class array_practice {
     }
     
 }
+*/

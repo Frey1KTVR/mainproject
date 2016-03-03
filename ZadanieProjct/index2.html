@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles/index.css">
 	<title> Задание </title>
+	<script type="text/javascript" src="js/index3.js"></script>
 
 </head>
 <body>
@@ -20,9 +21,9 @@
 		   		<h3> Отечественные писатели: </h3> 
 		   </caption>
 		   
-		   <tr><td><a href="index3.html">Серге́й Алекса́ндрович Есе́нин (1895-1925)<a></td><td><a href="index6.html">Лев Николаевич Толстой (1828-1910)</td></tr>
-		   <tr><td><a href="index4.html">Михаи́л Афана́сьевич Булга́ков (1891-1940)</td><td><a href="index7.html">Влади́мир Влади́мирович Маяко́вский (1893-1930)</td></tr>
-		   <tr><td><a href="index5.html">Алекса́ндр Иса́евич Солжени́цын (1918-2008)</td><td><a href="index8.html">Фёдор Миха́йлович Достое́вский (1821-1881)</td></tr>
+		   <tr><td><p id="esenin"  onclick="pissOff('0')">Серге́й Алекса́ндрович Есе́нин (1895-1925)</p></td><td><p id="tolstoi" onclick="pissOff('3')">Лев Николаевич Толстой (1828-1910)</p></td></tr>
+		   <tr><td><p id="bulgakov" onclick="pissOff('1')">Михаи́л Афана́сьевич Булга́ков (1891-1940)</p></td><td><p id="majakovsky" onclick="pissOff('4')">Влади́мир Влади́мирович Маяко́вский (1893-1930)</p></td></tr>
+		   <tr><td><p id="solzen" onclick="pissOff('2')">Алекса́ндр Иса́евич Солжени́цын (1918-2008)</p></td><td><p id="dostoevsky" onclick="pissOff('5')">Фёдор Миха́йлович Достое́вский (1821-1881)</p></td></tr>
   		</table>
   		</div>
 		<div class="stroka">
@@ -36,8 +37,7 @@
 				<p class="t">Музы и вдохновение</p>
 			</div>
 		</div>
-		<div class="lenta">
-			
+		<div id="massiv" class="lenta" class="massive">
 			<div class="tema1">
 				<h3 class="zag1"> TEMA: О САЙТЕ
 				<div>
@@ -50,19 +50,25 @@
 					</div>
 					
 				</div>
-				<div>
+				<div id="func">
 					<p id="textmes"> Здесь можно найти приют для Вашего видения этого мира
 					и душевных переживаний, делясь при этом ими с коллегами или "друзьями по несчастью (или счастью)"
 					через наш форум ТВОРЧЕСТВО, где уже выложены произведения нескольких наших пользователей. 
 					Также можно познакомиться с мастерами нашего непростого дела через - <a href="index2.html">ЗНАМЕНИТЫЕ ПИСАТЕЛИ</a>.
 					Ну и, конечно, найти вдохновение и "твёрдое плечо" в МУЗЫ И ВДОХНОВЕНИЕ.
 	                </p>
-                </div>
-			</div>
+            </div>
+            </div>
+			
+
+			
+			
 		</div>
 	</div>
 	<div class="podowva">
-
+	<script src="js/index3.js" type="text/javascript">
+	</script>
+	<link rel="stylesheet" href="styles/index.css">
 	</div>	
 	
 </body>

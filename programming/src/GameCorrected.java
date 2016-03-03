@@ -1,34 +1,40 @@
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Test #2
  */
-
-/**
- *
- * @author pupil
- */
-public class game {
-    private static Object sccanner;
+public class GameCorrected {
+    
     public static void main(String[] args) {
         Random random=new Random();
         int mynumber= random.nextInt(15-10+1)+10;
-        
-        
+        int number;
+        String q="q";
         System.out.println("задуманно число от 10 до 15, угадай!");
-        System.out.println("Утебя 3 попытки:");
+        System.out.println("У тебя 3 попытки:");
         
        
         
         
         for (int z=1;z<4;z++){
             System.out.printf("Попытка номер %d%n",z);
-            Scanner sc= new Scanner(System.in);
-            int number=sc.nextInt();
+            
+            StringIsNumber strint=new StringIsNumber();
+            number=strint.getNumber();
+            
+            if(number.equals(q)){
+            }
+            if(number<10 || number>15){
+                System.out.println("Please, be careful. Enter number from requested 10 to 15 ");
+                z--;
+            }
+            
+            else{
             if(number==mynumber){
             System.out.println("You win!");
             break;
@@ -36,9 +42,15 @@ public class game {
             else if(z!=3){
             System.out.println("Incorrect, try again");
             }
+            }
+            
+            
+    
         }
         System.out.printf("GAME OVER! The number was: %d%n",mynumber);
         
-    }    
-}   
+    }
+}
+    
+   
     
