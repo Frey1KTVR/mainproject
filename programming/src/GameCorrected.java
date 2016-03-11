@@ -27,8 +27,7 @@ public class GameCorrected {
             StringIsNumber strint=new StringIsNumber();
             number=strint.getNumber();
             
-            if(number.equals(q)){
-            }
+            
             if(number<10 || number>15){
                 System.out.println("Please, be careful. Enter number from requested 10 to 15 ");
                 z--;

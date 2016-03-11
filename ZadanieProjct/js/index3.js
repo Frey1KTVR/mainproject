@@ -58,43 +58,8 @@
 // xhr.send();
 
 
-// function getContent(data,i){
-// 	alert(i);
-// 	var str='';
-	
-// 	//for(var i=0; i<data.popularwriters.length; i++){
-		
-// 		str+='<div class="tema1">';
-// 		str+=('<h3 class="zag1">'+data.popularwriters[i].arrTheme);
-// 		str+=('<div><div class="avtor1"><h5>'+data.popularwriters[i].arrAuthor+'</div>');
-// 		str+=('<div class="date1"><h5>'+data.popularwriters[i].arrDate+'</div></div>');
-// 		str+=('<img src="'+data.popularwriters[i].arrPicture+'" class="pictext">');
-// 		str+=('<div><p class="textmes">'+data.popularwriters[i].arrMessage+'</p></div>');
-		
-// 		str+="</div>";
-// 	//}
-	
-// 	return str;
-// }
-// function pissOff(i){
-	
-// alert(i);
-// var xhr=new XMLHttpRequest();
-// xhr.onload=function(){
-// 	console.log(xhr.responseText);
-// 	var data=JSON.parse(xhr.responseText);
-// 	document.getElementById("massiv").innerHTML=getContent(data,i);
-	
-// }	
-	
-// xhr.open("GET","data.json",true);
-// xhr.send();
-// }
-
-
-
 function getContent(data,i){
-	
+	//alert(i);
 	var str='';
 	
 	//for(var i=0; i<data.popularwriters.length; i++){
@@ -111,18 +76,53 @@ function getContent(data,i){
 	
 	return str;
 }
+function pissOff(i){
+	
 
 var xhr=new XMLHttpRequest();
 xhr.onload=function(){
 	console.log(xhr.responseText);
 	var data=JSON.parse(xhr.responseText);
-	return data;
-}
-
+	document.getElementById("massiv").innerHTML=getContent(data,i);
+	
+}	
 	
 xhr.open("GET","data.json",true);
 xhr.send();
+}
 
-function pissOff(i){}
+
+
+// function getContent(data){
+	
+// 	var str='';
+	
+// 	//for(var i=0; i<data.popularwriters.length; i++){
+		
+// 		str+='<div class="tema1">';
+// 		str+=('<h3 class="zag1">'+data.popularwriters[i].arrTheme);
+// 		str+=('<div><div class="avtor1"><h5>'+data.popularwriters[i].arrAuthor+'</div>');
+// 		str+=('<div class="date1"><h5>'+data.popularwriters[i].arrDate+'</div></div>');
+// 		str+=('<img src="'+data.popularwriters[i].arrPicture+'" class="pictext">');
+// 		str+=('<div><p class="textmes">'+data.popularwriters[i].arrMessage+'</p></div>');
+		
+// 		str+="</div>";
+// 	//}
+	
+// 	return str;
+// }
+
+// var xhr=new XMLHttpRequest();
+// xhr.onload=function(){
+// 	console.log(xhr.responseText);
+// 	var data=JSON.parse(xhr.responseText);
+// 	return data;
+// }
+
+	
+// xhr.open("GET","data.json",true);
+// xhr.send();
+
+// //function pissOff(i){}
 
 

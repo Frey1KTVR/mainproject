@@ -22,11 +22,8 @@ public class StringIsNumber {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String youString = sc.next();
-            if(youString.equals(q)){
-                youString=404.404;
-                return 404.404;
-            }
-            else if (isNumString(youString)) {
+            
+            if (isNumString(youString)) {
                 youNumber = Integer.parseInt(youString);
                 break;
             } else {
