@@ -5,6 +5,7 @@
  */
 package personal;
 
+import util.ParseCode;
 import java.text.ParseException;
 
 /**
@@ -13,7 +14,7 @@ import java.text.ParseException;
  */
 public class mainTEST {
     public static void main(String[] args) throws ParseException{
-    Age age=new Age();
+    ParseCode age=new ParseCode();
     int ag=age.age();
     System.out.println(ag);
     }
