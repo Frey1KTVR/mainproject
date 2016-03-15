@@ -18,6 +18,9 @@ public class ParseCode {
     private String year;
     private String day;
     private String month;
+    private String century;
+    private int age;
+    private String birthday;
     
     public ParseCode() {
     }
@@ -26,23 +29,54 @@ public class ParseCode {
         setCode(code);
     }
     
-    private String getCode() {
+    
+    public String getCode(){
         return code;
     }
-
     private void setCode(String code) {
         this.code = code;
-        //GENDER
-        String a=code.substring(0,1);
+        //GENDER CENTURY
         
-        if(a.equals("3") || a.equals("5")){
+        String gen=code.substring(0,1);
+        switch (gen) {
+            case "3":{
+                setGender("male");
+                setCentury("19");
+                break;
+            }
+            case "4":{
+                setGender("female");
+                setCentury("19");
+                break;
+            }
+            case "5":{
+                setGender("male");
+                setCentury("20");
+                break;
+            }
+            case "6":{
+                setGender("female");
+                setCentury("20");
+                break;
+            }
+            default:
+                throw new AssertionError();
+        }
+        if(gen.equals("3") || gen.equals("5")){
             setGender("male");
         }
-        else if(a.equals("4")|| a.equals("6")){
+        else if(gen.equals("4")|| gen.equals("6")){
             setGender("female");
         }
-        //
-        
+        //YEAR
+        String year=code.substring(1,3);
+        setYear(year);
+        //DAY
+        String day=code.substring(5,7);
+        setDay(day);
+        //MONTH
+        String month=code.substring(3,5);
+        setMonth(month);
         
     }
 
@@ -51,7 +85,7 @@ public class ParseCode {
     }
 
     private void setGender(String gender) {
-      this.gender=gender; 
+        this.gender=gender; 
     }
        
 
@@ -78,6 +112,46 @@ public class ParseCode {
     private void setMonth(String month) {
         this.month = month;
     }
+    private void setCentury(String century) {
+        this.century=century;
+    }
+    public String getCentury(){
+        return century;
+    }
+
+    
+
+    public int getAge(){
+          return age;
+      }
+
+    private void setAge() throws ParseException {
+        String id=getCode();
+        
+        Calendar today=Calendar.getInstance();
+        Calendar dob = Calendar.getInstance();       
+        SimpleDateFormat birth=new SimpleDateFormat("dd/mm/yy");       
+        Date birthday=birth.parse(getDay()+'/'+getMonth()+'/'+getYear());
+        dob.setTime(birthday);
+        //System.out.println("s"+dob+"%n");
+        // include day of birth
+        dob.add(Calendar.MONTH, -1);
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        if ( (today.get(Calendar.DAY_OF_YEAR)) < (dob.get(Calendar.DAY_OF_YEAR))) {
+            age=age-1;
+        }
+        
+        this.age = age;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    private void setBirthday(String birthday) {
+        birthday=getDay()+"."+getMonth()+"."+getCentury()+getYear();
+        this.birthday = birthday;
+    }
 
 
 
@@ -87,29 +161,29 @@ public class ParseCode {
 
 
 
-
-
+    
+}
 
 //    public int age () throws ParseException{
 //        IsNumber isNumber=new IsNumber();
 //        String id;
-//        String a;
+//        String gen;
 //        String gen;
 //        while(true){
 //        
 //        id=isNumber.Code();
 //        
-//        a=id.substring(0, 1);
+//        gen=id.substring(0, 1);
 //        
-//        System.out.println(a);
+//        System.out.println(gen);
 //        
 //        
-//        if(a.equals("3") || a.equals("5")){
+//        if(gen.equals("3") || gen.equals("5")){
 //            gen ="male";
 //            
 //            break;
 //        }
-//        else if(a.equals("4")|| a.equals("6")){
+//        else if(gen.equals("4")|| gen.equals("6")){
 //            gen ="female";
 //            break;
 //        }
@@ -147,9 +221,8 @@ public class ParseCode {
 //        return age;
 //        
 //}
-}
 
-
+  
 
 
 
