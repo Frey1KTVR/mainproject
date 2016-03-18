@@ -6,6 +6,7 @@
 package personal;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -80,9 +81,10 @@ public class Student {
         
 
         Calendar dob = Calendar.getInstance();
-        Calendar today = Calendar.getInstance();
+        
+        
 
-        dob.setTime(birthday);
+        //dob.setTime(birthday);
         // include day of birth
         dob.add(Calendar.DAY_OF_MONTH, -1);
 

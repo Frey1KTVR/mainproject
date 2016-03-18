@@ -25,7 +25,7 @@ public class ParseCode {
     public ParseCode() {
     }
 
-    public ParseCode(String code) {
+    public ParseCode(String code) throws ParseException {
         setCode(code);
     }
     
@@ -33,7 +33,7 @@ public class ParseCode {
     public String getCode(){
         return code;
     }
-    private void setCode(String code) {
+    public void setCode(String code) throws ParseException {
         this.code = code;
         //GENDER CENTURY
         
@@ -77,7 +77,23 @@ public class ParseCode {
         //MONTH
         String month=code.substring(3,5);
         setMonth(month);
-        
+        //AGE
+        Calendar today=Calendar.getInstance();
+        Calendar dob = Calendar.getInstance();       
+        SimpleDateFormat birth=new SimpleDateFormat("dd/mm/yy");       
+        Date birthday=birth.parse(getDay()+'/'+getMonth()+'/'+getYear());
+        dob.setTime(birthday);
+        //System.out.println("s"+dob+"%n");
+        // include day of birth
+        dob.add(Calendar.MONTH, -1);
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        if ( (today.get(Calendar.DAY_OF_YEAR)) < (dob.get(Calendar.DAY_OF_YEAR))) {
+            age=age-1;
+        }
+        setAge(age);
+        //BIRTHDAY
+        String birthdayy=getDay()+"."+getMonth()+"."+getCentury()+getYear();
+        setBirthday(birthdayy);
     }
 
     public String getGender() {
@@ -88,7 +104,6 @@ public class ParseCode {
         this.gender=gender; 
     }
        
-
     public String getYear() {
         return year;
     }
@@ -125,21 +140,7 @@ public class ParseCode {
           return age;
       }
 
-    private void setAge() throws ParseException {
-        String id=getCode();
-        
-        Calendar today=Calendar.getInstance();
-        Calendar dob = Calendar.getInstance();       
-        SimpleDateFormat birth=new SimpleDateFormat("dd/mm/yy");       
-        Date birthday=birth.parse(getDay()+'/'+getMonth()+'/'+getYear());
-        dob.setTime(birthday);
-        //System.out.println("s"+dob+"%n");
-        // include day of birth
-        dob.add(Calendar.MONTH, -1);
-        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-        if ( (today.get(Calendar.DAY_OF_YEAR)) < (dob.get(Calendar.DAY_OF_YEAR))) {
-            age=age-1;
-        }
+    private void setAge(int age) throws ParseException {
         
         this.age = age;
     }
@@ -148,9 +149,9 @@ public class ParseCode {
         return birthday;
     }
 
-    private void setBirthday(String birthday) {
-        birthday=getDay()+"."+getMonth()+"."+getCentury()+getYear();
-        this.birthday = birthday;
+    private void setBirthday(String birthdayy) {
+        
+        this.birthday = birthdayy;
     }
 
 
