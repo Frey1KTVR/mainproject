@@ -5,47 +5,22 @@
  */
 package personal;
 
+import java.text.ParseException;
+
 /**
  *
  * @author pupil
  */
-public class Administration {
-    private String name;
-    private String surname;
-    private String code;
+public class Administration extends Person {
+    
     private int salary;
     private String rank;
     public Administration(){};
-    public Administration(String name, String surname, String code, int salary, String rank) {
-        this.name = name;
-        this.surname = surname;
-        this.code = code;
-        this.salary = salary;
-        this.rank = rank;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
+    public Administration(int salary, String rank, String name, String surname, String code, int age, String birthday, String year, String day, String month) throws ParseException {
+        super(name, surname, code, age,  birthday,  year,  day, month);
+        setSalary(salary);
+        setRank(rank);
+        
     }
 
     public int getSalary() {
@@ -63,6 +38,14 @@ public class Administration {
     public void setRank(String rank) {
         this.rank = rank;
     }
+    public String toString(){
+        return "I am a Administrator\n\t"+
+                "my full name is "+getName()+getSurname()+
+                "\nID code: "+getCode()+
+                "\nmy age is"+getAge()+
+                "\nDate of birth is: "+getBirthday()+
+                "\nmy  average salary is: "+getSalary()+
+                "\nand name of my group is: "+getRank();
     
-    
+}
 }

@@ -5,6 +5,7 @@
  */
 package personal;
 
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -12,20 +13,16 @@ import java.util.Date;
  *
  * @author pupil
  */
-public class Student {
-    private String name;
-    private String surname;
-    private String code;
+public class Student extends Person {
+    
     private int grade;
     private String group;
 
     public Student() {
     }
 
-    public Student(String name, String surname, String code, int grade, String group) {
-        this.name = name;
-        this.surname = surname;
-        this.code = code;
+    public Student(int grade, String group,String name, String surname, String code, int age, String birthday, String year, String day, String month) throws ParseException {
+        super(name, surname, code, age,  birthday,  year,  day, month);
         this.grade = grade;
         this.group = group;
     }
@@ -38,29 +35,7 @@ public class Student {
         this.group = group;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
+   
 
     public int getGrade() {
         return grade;
@@ -70,31 +45,17 @@ public class Student {
         this.grade = grade;
     }
     
+    public String toString(){
+        return "I am a Student\n\t"+
+                "my full name is "+getName()+getSurname()+
+                "\nID code: "+getCode()+
+                "\nmy age is"+getAge()+
+                "\nDate of birth is: "+getBirthday()+
+                "\nmy  average grade is 4 "+getGrade()+
+                "\nand name of my group is: "+getGroup();
+                
+    }
     
-    public int age(){
-        String idString=getCode();
-        String yearString=idString.substring(1,3);
-        String centuryString = idString.substring(0, 1);
-        String mounthString=idString.substring(3, 5);
-        String dayString=idString.substring(5, 7);
-        Calendar today=Calendar.getInstance();
-        
-
-        Calendar dob = Calendar.getInstance();
-        
-        
-
-        //dob.setTime(birthday);
-        // include day of birth
-        dob.add(Calendar.DAY_OF_MONTH, -1);
-
-        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-        if (today.get(Calendar.DAY_OF_YEAR) <= dob.get(Calendar.DAY_OF_YEAR)) {
-            age--;
-    }
-    return age;
-
-    }
 
 
     
