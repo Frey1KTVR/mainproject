@@ -21,8 +21,8 @@ public class Student extends Person {
     public Student() {
     }
 
-    public Student(int grade, String group,String name, String surname, String code, int age, String birthday, String year, String day, String month) throws ParseException {
-        super(name, surname, code, age,  birthday,  year,  day, month);
+    public Student(int grade, String group,String name, String surname, String code) throws ParseException {
+        super(name, surname, code);
         this.grade = grade;
         this.group = group;
     }

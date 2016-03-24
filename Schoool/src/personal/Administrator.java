@@ -11,23 +11,23 @@ import java.text.ParseException;
  *
  * @author pupil
  */
-public class Administration extends Person {
+public class Administrator extends Person {
     
-    private int salary;
+    private double salary;
     private String rank;
-    public Administration(){};
-    public Administration(int salary, String rank, String name, String surname, String code, int age, String birthday, String year, String day, String month) throws ParseException {
-        super(name, surname, code, age,  birthday,  year,  day, month);
+    public Administrator(){};
+    public Administrator(double salary, String rank, String name, String surname, String code) throws ParseException {
+        super(name, surname, code);
         setSalary(salary);
         setRank(rank);
         
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 

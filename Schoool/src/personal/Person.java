@@ -5,7 +5,7 @@
  */
 package personal;
 
-import java.text.ParseException;
+
 import util.ParseCode;
 
 /**
@@ -18,13 +18,13 @@ public abstract class Person {
     private String code;
     private int age;
     private String birthday;
-    private String year;
-    private String day;
+    private int year;
+    private int day;
     private String month;
     private String gender;
     public Person(){};
 
-    public Person(String name, String surname, String code, int age, String birthday, String year, String day, String month) throws ParseException {
+    public Person(String name, String surname, String code){
         setName(name);
         setSurname(surname);
         setCode(code);
@@ -93,19 +93,19 @@ public abstract class Person {
         this.birthday = birthday;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public String getDay() {
+    public int getDay() {
         return day;
     }
 
-    public void setDay(String day) {
+    public void setDay(int day) {
         this.day = day;
     }
 

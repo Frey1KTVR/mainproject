@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package util;
-import java.text.ParseException;
+
+import static java.lang.Integer.parseInt;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,9 +16,9 @@ import java.util.Date;
 public class ParseCode {
     private String code;
     private String gender;
-    private String year;
-    private String day;
-    private String month;
+    private int year;
+    private int day;
+    private int month;
     private String century;
     private int age;
     private String birthday;
@@ -25,7 +26,7 @@ public class ParseCode {
     public ParseCode() {
     }
 
-    public ParseCode(String code) throws ParseException {
+    public ParseCode(String code) {
         setCode(code);
     }
     
@@ -33,56 +34,57 @@ public class ParseCode {
     public String getCode(){
         return code;
     }
-    public void setCode(String code) throws ParseException {
+    public void setCode(String code){
         this.code = code;
         //GENDER CENTURY
+        //YEAR
+        String year=code.substring(1,3);
         
         String gen=code.substring(0,1);
         switch (gen) {
             case "3":{
                 setGender("male");
-                setCentury("19");
+                setYear("19"+year);
                 break;
             }
             case "4":{
                 setGender("female");
-                setCentury("19");
+                setYear("19"+year);
                 break;
             }
             case "5":{
                 setGender("male");
-                setCentury("20");
+                setYear("20"+year);
                 break;
             }
             case "6":{
                 setGender("female");
-                setCentury("20");
+                setYear("20"+year);
                 break;
             }
-            default:
-                throw new AssertionError();
+          
         }
-        if(gen.equals("3") || gen.equals("5")){
-            setGender("male");
-        }
-        else if(gen.equals("4")|| gen.equals("6")){
-            setGender("female");
-        }
-        //YEAR
-        String year=code.substring(1,3);
-        setYear(year);
+//        if(gen.equals("3") || gen.equals("5")){
+//            setGender("male");
+//        }
+//        else if(gen.equals("4")|| gen.equals("6")){
+//            setGender("female");
+//        }
+        
         //DAY
-        String day=code.substring(5,7);
+        String da=code.substring(5,7);
+        int day=parseInt(da);
         setDay(day);
         //MONTH
-        String month=code.substring(3,5);
+        String mont=code.substring(3,5);
+        int month=parseInt(mont);
         setMonth(month);
         //AGE
         Calendar today=Calendar.getInstance();
         Calendar dob = Calendar.getInstance();       
-        SimpleDateFormat birth=new SimpleDateFormat("dd/mm/yy");       
-        Date birthday=birth.parse(getDay()+'/'+getMonth()+'/'+getYear());
-        dob.setTime(birthday);
+//        SimpleDateFormat birth=new SimpleDateFormat("dd/mm/yy");       
+//        String birthday=birth.parse(getDay()+'/'+getMonth()+'/'+getYear());
+        dob.set(getYear(),getMonth(),getDay());
         //System.out.println("s"+dob+"%n");
         // include day of birth
         dob.add(Calendar.MONTH, -1);
@@ -104,27 +106,28 @@ public class ParseCode {
         this.gender=gender; 
     }
        
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
     private void setYear(String year) {
-        this.year = year;
+        int yea=parseInt(year);
+        this.year = yea;
     }
 
-    public String getDay() {
+    public int getDay() {
         return day;
     }
 
-    private void setDay(String day) {
+    private void setDay(int day) {
         this.day = day;
     }
 
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
 
-    private void setMonth(String month) {
+    private void setMonth(int month) {
         this.month = month;
     }
     private void setCentury(String century) {
@@ -140,7 +143,7 @@ public class ParseCode {
           return age;
       }
 
-    private void setAge(int age) throws ParseException {
+    private void setAge(int age) {
         
         this.age = age;
     }
